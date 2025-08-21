@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanishka | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Kanishka's personal portfolio. Explore projects in AI, Web, and Embedded Systems.">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Kanishka</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Projects</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <section class="home" id="home">
+        <div class="home-content fade-in-up">
+            <h1>Hi, I'm <span>Kanishka</span> 👋</h1>
+            <h2>A Tech Explorer 🚀</h2>
+            <p>
+                Passionate about <strong>Electronics</strong> & <strong>Web Development</strong>.
+                Building projects that connect hardware with code.
+            </p>
+            <div class="home-buttons">
+                <a href="#projects" class="btn">View My Work ⚡</a>
+                <a href="#contact" class="btn btn-alt">Contact Me 📩</a>
+            </div>
+        </div>
+
+        <div class="home-image fade-in-right">
+            <img src="image.jpeg" alt="Kanishka Portrait">
+        </div>
+
+        <div class="scroll-indicator">
+            <span>⬇ Scroll Down</span>
+        </div>
+    </section>
+
+
+    <!-- About -->
+
+    <section class="about" id="about">
+        <h2>👩‍💻 About Me</h2>
+        <div class="about-content">
+            <img src="image.jpeg" alt="Kanishka's Portrait" class="fade-in-left">
+            <div class="about-text fade-in-right">
+                <p>
+                    Hey! I'm <strong>Kanishka</strong> — a tech explorer with a passion for both
+                    <strong>Electronics</strong> and
+                    <strong>Web Development</strong>.
+                    Whether it's building Hackathons, diving into blockchain, , I'm
+                    always
+                    chasing the next challenge.
+                </p>
+                <p>
+                    I'm especially drawn to projects that blend hardware with code and love working on real-world
+                    solutions in
+                    hackathons.
+                </p>
+                <p>
+                    💡 Always learning. Constantly building. Open to collaboration!
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+        <h2>🚀 My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in-up">
+                <h3>💡 Hackathons</h3>
+                <p>Turblent flow of Energy Harvesting , it convert kinetic energy into mechanical energy and it convert
+                    electrical energy .</p>
+            </div>
+
+            <div class="project-card fade-in-up">
+                <h3>🌐 Blockchain DApp</h3>
+                <p>A decentralized application built on Ethereum for secure and transparent transactions.</p>
+            </div>
+
+            <div class="project-card fade-in-up">
+                <h3>🚗 Bluetooth Control car </h3>
+                <p>Microcontroller,Bluethooth module,DC motor,Wheels and chassis, power source.</p>
+            </div>
+
+            <div class="project-card fade-in-up">
+                <h3>🌐 Password Based Door lock</h3>
+                <p>The device that has been developed to enhance the security of a place concerned where the entry of
+                    unauthorized individuals is restricted.</p>
+            </div>
+
+            <div class="project-card fade-in-up">
+                <h3>🌊 Grey Water Management </h3>
+                <p>It involves treating and reusing wastewater from source like sinks,shower,and laundry,excluding
+                    toilet wastewater .</p>
+            </div>
+
+            <div class="project-card fade-in-up">
+                <h3>⚡ IoT Automation</h3>
+                <p>A home automation project using ESP32 + sensors for smarter energy management.</p>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2>📩 Contact Me</h2>
+        <div class="contact-content">
+
+            <div class="contact-info fade-in-left">
+                <p>📧 <a href="kanishkamurugan05@gmail.com">Mail</a></p>
+                <p>💼 <a href="https://www.linkedin.com/in/kanishka-m-444198375/">LinkedIn</a></p>
+                <p>💼 <a href="https://github.com/KANISHKA-1905">GitHub</a></p>
+                <p>📍 <strong>Location:</strong> India</p>
+            </div>
+
+            <form class="contact-form fade-in-right">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message 🚀</button>
+            </form>
+
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Kanishka | All Rights Reserved</p>
+    </footer>
+
+
+
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const faders = document.querySelectorAll(".fade-in-left, .fade-in-right");
+            const appearOptions = { threshold: 0.3 };
+
+            const appearOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.style.opacity = "1";
+                    entry.target.style.animation = entry.target.classList.contains("fade-in-left")
+                        ? "fadeInLeft 1.2s ease forwards"
+                        : "fadeInRight 1.2s ease forwards";
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => appearOnScroll.observe(fader));
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const faders = document.querySelectorAll(".fade-in-left, .fade-in-right, .fade-in-up");
+            const appearOptions = { threshold: 0.2 };
+
+            const appearOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.style.opacity = "1";
+                    if (entry.target.classList.contains("fade-in-left")) {
+                        entry.target.style.animation = "fadeInLeft 1.2s ease forwards";
+                    } else if (entry.target.classList.contains("fade-in-right")) {
+                        entry.target.style.animation = "fadeInRight 1.2s ease forwards";
+                    } else if (entry.target.classList.contains("fade-in-up")) {
+                        entry.target.style.animation = "fadeInUp 1.2s ease forwards";
+                    }
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => appearOnScroll.observe(fader));
+        });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const faders = document.querySelectorAll(".fade-in-left, .fade-in-right, .fade-in-up");
+            const appearOptions = { threshold: 0.2 };
+
+            const appearOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.style.opacity = "1";
+                    if (entry.target.classList.contains("fade-in-left")) {
+                        entry.target.style.animation = "fadeInLeft 1.2s ease forwards";
+                    } else if (entry.target.classList.contains("fade-in-right")) {
+                        entry.target.style.animation = "fadeInRight 1.2s ease forwards";
+                    } else if (entry.target.classList.contains("fade-in-up")) {
+                        entry.target.style.animation = "fadeInUp 1.2s ease forwards";
+                    }
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => appearOnScroll.observe(fader));
+        });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const faders = document.querySelectorAll(".fade-in-left, .fade-in-right, .fade-in-up");
+            const appearOptions = { threshold: 0.2 };
+
+            const appearOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.style.opacity = "1";
+                    if (entry.target.classList.contains("fade-in-up")) {
+                        entry.target.style.animation = "fadeInUp 1.2s ease forwards";
+                    } else if (entry.target.classList.contains("fade-in-right")) {
+                        entry.target.style.animation = "fadeInRight 1.2s ease forwards";
+                    }
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => appearOnScroll.observe(fader));
+        });
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
